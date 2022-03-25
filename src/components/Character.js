@@ -5,14 +5,13 @@ import styled from "styled-components";
 //add styled components here
 
 const Character = (props) => {
-  const { jedi } = props;
+  const { info } = props;
 
   return (
     <div className="characterContainer">
-      {/* <h1>My StarWars Peeps</h1>
-      {data.map((char) => {
-        return;
-      })} */}
+      <div className="characters">
+        <p>{info.name}</p>
+      </div>
     </div>
   );
 };
