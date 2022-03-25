@@ -1,6 +1,15 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Character from "./components/Character";
+import styled from "styled-components";
+
+const AppWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid navy;
+`;
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -31,12 +40,12 @@ const App = () => {
   }, []);
 
   return (
-    <div className="App">
+    <AppWrapper className="App">
       <h1 className="Header">StarWars Characters</h1>
       {jedis.map((jedi) => {
         return jedis && <Character info={jedi} key={jedi.id} />;
       })}
-    </div>
+    </AppWrapper>
   );
 };
 
