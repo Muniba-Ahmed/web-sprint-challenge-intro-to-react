@@ -33,10 +33,6 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="Header">StarWars Characters</h1>
-      {jedi.map((info) => {
-        return <Character info={info} key={info.name} />;
-      })}
-      {/* {currentJediId && <Character jedi={jedi} />} */}
     </div>
   );
 };
