@@ -5,7 +5,7 @@ import Character from "./components/Character";
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
-  const [jedi, setJedi] = useState([]);
+  const [jedis, setJedis] = useState([]);
   // const [currentJediId, setCurrentJediId] = useState(null);
 
   // const openDetails = (id) => {
@@ -25,7 +25,7 @@ const App = () => {
       .then((res) => {
         // console.log(res.data);
 
-        setJedi(res.data);
+        setJedis(res.data);
       })
       .catch((err) => console.error(err));
   }, []);
@@ -33,6 +33,9 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="Header">StarWars Characters</h1>
+      {jedis.map((jedi) => {
+        return jedis && <Character info={jedi} key={jedi.id} />;
+      })}
     </div>
   );
 };
